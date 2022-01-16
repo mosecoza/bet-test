@@ -1,25 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Auth from '../Auth'
-import '../../index.css';
+import Auth from '../Auth/AuthPage'
+import '../../App.css';
+import LandingPage from '../Landing/LandingPage';
 
-function Navigation({ loggedIn }: any) {
+function Navigation({ loggedIn=false }: any) {
     return (
-        <div className="min-vh-100 min-vw-100">
         <Router>
             <Routes>
                 <Route path="/" element={!loggedIn ? <Auth /> : <Navigate to="/home" />} />
+                <Route path="/home" element={<LandingPage/>}/>
             </Routes>
 
         </Router>
-
-        </div>
     )
 }
 const mapStateToProps = (state: any) => {
+    console.log("Navigation mapStateToProps state: ",state);
+    
     return {
-        loggedIn: state.auth.loggedIn
+        loggedIn: state.user.loggedIn
     }
 }
 export default connect(mapStateToProps)(Navigation);

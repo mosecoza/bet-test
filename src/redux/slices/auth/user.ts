@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IUserState } from '../../../utils/interfaces'
-import { setRegister } from './auth-actions'
-// import type { RootState } from '../../app/store'
+import { setRegister } from './user-actions'
 
 // Define a type for the slice state
 
@@ -11,20 +10,22 @@ const initialState: IUserState = {
   email: null,
   name: null,
   dob: null,
-  token: null
+  token: null,
+  loggedIn: false
 }
 
-export const userSlice = createSlice({
-  name: 'User',
+export const user = createSlice({
+  name: 'user',
   // `createSlice` will infer the state type from the `initialState` argument
-  initialState,
+  initialState:initialState,
   reducers: {
     logOut: (state) => {
       state = {
         email: null,
         name: null,
         dob: null,
-        token: null
+        token: null,
+        loggedIn: false
       }
     }
 
@@ -36,13 +37,13 @@ export const userSlice = createSlice({
     builder.addCase(setRegister.rejected,(state,{payload})=>{
 
     })
-    builder.addCase(setRegister.fulfilled,(state, {payload})=>{
+    builder.addCase(setRegister.fulfilled,(state,{payload})=>{
 
     })
   }
 })
 
-export const { logOut } = userSlice.actions;
+export const { logOut } = user.actions;
 
 
-export default userSlice.reducer;
+export default user.reducer;

@@ -1,35 +1,36 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import "./index.css";
-
-const bg = require("../../assets/coj-unsplash.jpg");
+import bg from "../../assets/zebra-bushveld-unsplash.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const AuthPage = (props:any) => {
+  let navigate = useNavigate();
     return (
-        <div className="w-screen h-screen p-5 bg-gradient-to-r from-teal-100 via-teal-50 to-teal-100">
-        <div className='flex justify-between shadow-md rounded-3xl w-100 h-100'>
+        <div className="w-screen h-screen  bg-gradient-to-tr from-yellow-50 via-yellow-100 to-yellow-50">
+        <div className='flex justify-between shadow-md rw-100 h-100'>
   
-          <div className='justify-center rounded-l-3xl w-50 d-flex align-items-centers bg-light my-container'>
-            <img src={bg} alt="Avatar" className="image rounded-l-3xl" />
-            <div className="flex flex-col justify-between py-3 overlay rounded-l-3xl">
+          <div className='justify-center w-50 d-flex align-items-centers bg-light my-container'>
+            <img src={bg} alt="Avatar" className="image " />
+            <div className="flex flex-col justify-between py-3 overlay ">
   
-              <h5 className='font-weight-bolder'>
+              <h5 className='font-weight-bolder text-yellow-500'>
                 My Name is John
               </h5>
   
               
-              <p>
+              <p className='text-yellow-200'>
                 and save to reload.
               </p>
-              <small className='fw-bold'>
+              <small className='fw-bold text-yellow-200'>
                 Look better than this
               </small>
             </div>
   
           </div>
-          <div className='flex-col bg-white rounded-r-3xl w-50 d-flex justify-content-around align-items-center'>
+          <div className='flex-col bg-white w-50 d-flex justify-content-around align-items-center'>
             <h4 className='font-extrabold h4'>Login</h4>
-            <form className="px-8 pt-6 pb-8 mb-4 bg-white ">
+            <form className="px-4 pt-6 pb-8 mb-4 ">
               <div className="mb-4">
                 <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="username">
                   Username
@@ -44,10 +45,10 @@ const AuthPage = (props:any) => {
                 <p className="text-xs italic text-red-500">Please choose a password.</p>
               </div>
               <div className="flex items-center justify-between">
-                <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button">
+                <button onClick={()=>navigate("/home")} className="px-2 py-2 font-bold text-white bg-yellow-600 rounded hover:bg-yellow-700 focus:outline-none focus:shadow-outline" type="button">
                   Sign In
                 </button>
-                <a className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800" href="#">
+                <a className="inline-block text-sm font-bold text-yellow-500 align-baseline hover:text-yellow-800" href="#">
                   Forgot Password?
                 </a>
               </div>
