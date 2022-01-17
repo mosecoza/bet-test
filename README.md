@@ -12,6 +12,8 @@ To run the auth back-end
 ```
 on port 3000
 
+email "sally@mail.com"
+password "qwertyui123"
 
 cd auth-server && yarn && yarn start
 
