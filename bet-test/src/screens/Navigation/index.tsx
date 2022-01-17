@@ -10,7 +10,10 @@ function Navigation({ loggedIn=false }: any) {
         <Router>
             <Routes>
                 <Route path="/" element={!loggedIn ? <Auth /> : <Navigate to="/home" />} />
-                <Route path="/home" element={<LandingPage/>}/>
+                {loggedIn?
+                <Route path="/home" element={<LandingPage/>}/>:
+                null
+                }
             </Routes>
 
         </Router>

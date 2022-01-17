@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import AuthPage from "./AuthPage";
-test('AuthPage', () => {
+test('renders learn react link', () => {
   render(<AuthPage />);
-  const element = screen.getByText(/login/i);
-  expect(element).toBeInTheDocument();
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });

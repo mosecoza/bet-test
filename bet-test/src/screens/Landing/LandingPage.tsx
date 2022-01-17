@@ -17,7 +17,7 @@ const  LandingPage: React.FC<ILandingPage> =(props)=> {
 
     useEffect(() => {
         if (live) {
-            props.getNews({searchString:'microfrontend',page:1});
+            props.getNews({searchString:'microfrontend',page:0});
         }
         return () => {
             live = false;
